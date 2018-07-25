@@ -11,7 +11,7 @@ namespace CustomChallengeDifficulties {
 		
 		public static void Load() {
 			List<VariableAndSetter> varList = new List<VariableAndSetter> {
-				new VariableAndSetter("var1", x => Variable1 = x, null),
+				new VariableAndSetter("var1", x => Variable1 = x, null, null),
             };
 			
 			SettingsUtil.LoadFromFile(FILE, varList);

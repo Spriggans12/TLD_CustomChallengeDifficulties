@@ -1,23 +1,16 @@
 
 using System;
+using Harmony;
+using TLD_CustomChallengeDifficulties.src.patch;
 using UnityEngine;
 
 namespace CustomChallengeDifficulties {
-	
-	class PatchChallengeNomad {
-		static bool Prepare() {
-			try {
-				DifficultySettings.Load();
-				ChallengeNomadSettings.Load();
-			} catch (Exception e) {
-				Debug.LogFormat(e.Message);
-				throw;
-			}
-			
-			return true;
-		}
-		
-		// TODO
-	}
-	
+
+
+    class PatchChallengeNomad {
+
+        // TODO. Nothing yet.
+
+    }
+
 }

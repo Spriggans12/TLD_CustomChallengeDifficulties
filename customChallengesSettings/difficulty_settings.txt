@@ -1,7 +1,104 @@
 # This is a file. Please make docs.
 # It is not possible to comment variables.
 
-# This is a comment
-var = 0.5
+#
+m_DayNightDurationScale = 
 
-anotherVariable = false
+#
+m_WeatherDurationScale = 
+
+#
+m_ChanceOfBlizzardScale = 
+
+#
+m_CalorieBurnScale = 
+
+#
+m_ThirstRateScale = 
+
+#
+m_FreezingRateScale = 
+
+#
+m_FatigueRateScale = 
+
+#
+m_ConditonRecoveryFromRestScale = 
+
+#
+m_ConditonRecoveryWhileAwakeScale = 
+
+#
+m_DecayScale = 
+
+#
+m_GearSpawnChanceScale = 
+
+#
+m_ReduceMaxItemsInContainer = 
+
+#
+m_ChanceForEmptyContainer = 
+
+#
+m_SpawnRegionChanceActiveScale = 
+
+#
+m_ClosestSpawnDistanceAfterTransitionScale = 
+
+#
+m_SmellRangeScale = 
+
+#
+m_StruggleTapStrengthScale = 
+
+#
+m_StrugglePlayerDamageReceivedIntervalScale = 
+
+#
+m_StrugglePlayerDamageReceivedScale = 
+
+#
+m_StrugglePlayerClothingDamageScale = 
+
+#
+m_StugglePlayerPercentLossFromBearScale = 
+
+#
+m_OutdoorTempDropCelsiusMax = 
+
+#
+m_OutdoorTempDropDayStart = 
+
+#
+m_OutdoorTempDropDayFinal = 
+
+#
+m_RespawnHoursScaleMax = 
+
+#
+m_RespawnHoursScaleDayStart = 
+
+#
+m_RespawnHoursScaleDayFinal = 
+
+#
+m_FishCatchTimeScaleMax = 
+
+#
+m_FishCatchTimeScaleDayStart = 
+
+#
+m_FishCatchTimeScaleDayFinal = 
+
+#
+m_RadialRespawnTimeScaleMax = 
+
+#
+m_RadialRespawnTimeScaleDayStart = 
+
+#
+m_RadialRespawnTimeScaleDayFinal = 
+
+#
+m_NumHoursWarmForHypothermiaCureScale = 
