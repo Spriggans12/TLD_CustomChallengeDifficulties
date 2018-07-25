@@ -1,0 +1,128 @@
+CustomExperienceMode variables :
+
+	[Header("DO NOT EDIT ABOVE,EDIT CUSTOM VALUES BELOW"), Space(20f), Space(20f)]
+	public bool m_AllowInteriorStartingSpawn;
+	public bool m_SurvivorVoiceOver;
+	public bool m_WeakIce;
+	public bool m_UseMinAirTempValue;
+	public bool m_EnableDysentery;
+	public bool m_EnableSprains;
+	public bool m_EnableFoodPoisoning;
+	public bool m_EnableBrokenRibs;
+	public bool m_LimitedRest;
+	public bool m_AdjustFreezingDueToNearbyFire;
+	public bool m_InterruptIfFreezingWhileSleeping;
+	public bool m_RiflesInWorld;
+	public CustomExperienceModeManager.CustomTunableLMHV m_BaseWorldDifficulty;
+	public CustomExperienceModeManager.CustomTunableNLMH m_StruggleClothingDamageBonus;
+	public CustomExperienceModeManager.CustomTunableDayNightMultiplier m_DayNightLengthMultiplier;
+	public CustomExperienceModeManager.CustomTunableLMHV m_WeatherChangeFrequency;
+	public CustomExperienceModeManager.CustomTunableNLMH m_StrugglePlayerStrengthBonus;
+	public CustomExperienceModeManager.CustomTunableNLMH m_GradualTempReductionRate;
+	public CustomExperienceModeManager.CustomTunableNLMH m_AuroraFrequency;
+	public CustomExperienceModeManager.CustomTunableLMHV m_CalorieBurnRate;
+	public CustomExperienceModeManager.CustomTunableLMHV m_ThirstIncrease;
+	public CustomExperienceModeManager.CustomTunableLMHV m_FatigueIncrease;
+	public CustomExperienceModeManager.CustomTunableLMHV m_FreezingIncrease;
+	public CustomExperienceModeManager.CustomTunableLMHV m_HoursWarmthToCureHypothermia;
+	public CustomExperienceModeManager.CustomTunableLMHV m_ItemDecayRate;
+	public CustomExperienceModeManager.CustomTunableLMHV m_ItemSpawnChance;
+	public CustomExperienceModeManager.CustomTunableNLMH m_ReduceWildlifePopOverTime;
+	public CustomExperienceModeManager.CustomTunableNLMH m_EmptyContainerChance;
+	public CustomExperienceModeManager.CustomTunableLMHV m_StickBranchStoneSpawnFrequency;
+	public CustomExperienceModeManager.CustomTunableLMHV m_StartingGear;
+	public CustomExperienceModeManager.CustomTunableNLMH m_StruggleDamageReceivedBonus;
+	public CustomExperienceModeManager.CustomTunableNLMH m_ScentIncreaseFromMeatBlood;
+	public CustomExperienceModeManager.CustomTunableNLMH m_WolfFleeChance;
+	public CustomExperienceModeManager.CustomTunableLMHV m_StruggleDamageEventSeverity;
+	public CustomExperienceModeManager.CustomTunableLMHV m_WildlifeSmellRange;
+	public CustomExperienceModeManager.CustomTunableLMHV m_WildlifeSpawnFrequency;
+	public bool m_WildlifeNotAttackUnprovoked;
+	public bool m_NoPredatorsFirstDay;
+	public bool m_CabinFeverEnabled;
+	public bool m_ParasitesEnabled;
+	public CustomExperienceModeManager.CustomTunableNLMHV m_ConditionRecoveryRest;
+	public CustomExperienceModeManager.CustomTunableNLMHV m_ConditionRecoveryAwake;
+	public CustomExperienceModeManager.CustomTunableNLMHV m_FrosbiteRisk;
+	public CustomExperienceModeManager.CustomTunableNLMHV m_RabbitSpawnChance;
+	public CustomExperienceModeManager.CustomTunableNLMHV m_BearSpawnChance;
+	public CustomExperienceModeManager.CustomTunableNLMHV m_BlizzardFrequency;
+	public CustomExperienceModeManager.CustomTunableNLMHV m_DeerSpawnChance;
+	public CustomExperienceModeManager.CustomTunableNLMHV m_FishSpawnChance;
+	public CustomExperienceModeManager.CustomTunableNLMHV m_WolfSpawnChance;
+	public CustomExperienceModeManager.CustomTunableTimeOfDay m_StartTimeOfDay;
+	public bool m_WildlifeInterruptRest;
+	public CustomExperienceModeManager.CustomTunableLMH m_WindVariability;
+	public CustomExperienceModeManager.CustomTunableLMH m_PlantSpawnFrequency;
+	public CustomExperienceModeManager.CustomTunableNLH m_ReduceMaxItemsContainers;
+	public CustomExperienceModeManager.CustomTunableWeather m_StartWeather;
+	public CustomExperienceModeManager.CustomTunableDistance m_WolfSpawnDistance;
+	public CustomExperienceModeManager.CustomTunableDistance m_WildlifeDetectionRange;
+	public CustomExperienceModeManager.CustomTunableNLMHV m_MooseSpawnChance;
+	
+////////////////////
+ExperienceMode variables :
+
+	[Header("TOD and Weather"), Range(0f, 10f)]
+	public float m_DayNightDurationScale;
+	[Range(0f, 10f)]
+	public float m_WeatherDurationScale;
+	[Range(0f, 10f)]
+	public float m_ChanceOfBlizzardScale;
+	[Header("Player"), Range(0f, 10f)]
+	public float m_CalorieBurnScale;
+	[Range(0f, 10f)]
+	public float m_ThirstRateScale;
+	[Range(0f, 10f)]
+	public float m_FreezingRateScale;
+	[Range(0f, 10f)]
+	public float m_FatigueRateScale;
+	[Range(0f, 10f)]
+	public float m_ConditonRecoveryFromRestScale;
+	[Range(0f, 10f)]
+	public float m_ConditonRecoveryWhileAwakeScale;
+	[Header("Loot/Gear"), Range(0f, 10f)]
+	public float m_DecayScale;
+	[Range(0f, 1f)]
+	public float m_GearSpawnChanceScale;
+	[Range(0f, 10f)]
+	public int m_ReduceMaxItemsInContainer;
+	[Range(0f, 100f), Tooltip("Only used when ReduceMaxItemsInContainer results in empty container")]
+	public int m_ChanceForEmptyContainer;
+	[Header("AI"), Range(0f, 10f)]
+	public float m_SpawnRegionChanceActiveScale;
+	[Range(0f, 10f)]
+	public float m_ClosestSpawnDistanceAfterTransitionScale;
+	[Range(0f, 10f)]
+	public float m_SmellRangeScale;
+	[Header("Struggle"), Range(0f, 10f)]
+	public float m_StruggleTapStrengthScale;
+	[Range(0f, 10f)]
+	public float m_StrugglePlayerDamageReceivedIntervalScale;
+	[Range(0f, 10f)]
+	public float m_StrugglePlayerDamageReceivedScale;
+	[Range(0f, 10f)]
+	public float m_StrugglePlayerClothingDamageScale;
+	[Range(0f, 10f)]
+	public float m_StugglePlayerPercentLossFromBearScale;
+	[Header("Outdoor Temp Decrease")]
+	public float m_OutdoorTempDropCelsiusMax;
+	public int m_OutdoorTempDropDayStart;
+	public int m_OutdoorTempDropDayFinal;
+	[Header("AI Respawn Decrease")]
+	public float m_RespawnHoursScaleMax;
+	public int m_RespawnHoursScaleDayStart;
+	public int m_RespawnHoursScaleDayFinal;
+	[Header("Fishing Catch Decrease")]
+	public float m_FishCatchTimeScaleMax;
+	public int m_FishCatchTimeScaleDayStart;
+	public int m_FishCatchTimeScaleDayFinal;
+	[Header("Radial Spawn Decrease")]
+	public float m_RadialRespawnTimeScaleMax;
+	public int m_RadialRespawnTimeScaleDayStart;
+	public int m_RadialRespawnTimeScaleDayFinal;
+	[Header("First Aid"), Range(0f, 10f)]
+	public float m_NumHoursWarmForHypothermiaCureScale = 1f;
+	
+	
+ALL these [NAMES] are used by ExperienceModeManager.getNAMES()

@@ -1,0 +1,7 @@
+# This is a file. Please make docs.
+# It is not possible to comment variables.
+
+# This is a comment
+var = 0.5
+
+anotherVariable = false
