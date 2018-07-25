@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 
 /*
  * This class contains all the variables you can set in a vanilla sandbox game with a Custom difficulty.

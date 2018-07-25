@@ -1,11 +1,11 @@
 
+using System;
+using UnityEngine;
 
 namespace CustomChallengeDifficulties {
 	
 	class PatchChallengeNomad {
 		static bool Prepare() {
-			Debug.LogFormat.Log("");
-			Debug.LogFormat.Log(DateTime.Now + " ---- Loading Nomad Mod.");
 			try {
 				DifficultySettings.Load();
 				ChallengeNomadSettings.Load();
