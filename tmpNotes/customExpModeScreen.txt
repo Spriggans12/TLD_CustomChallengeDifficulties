@@ -1,0 +1,83 @@
+///// GAME START
+
+// Baseline resource availability
+// Starting time of day
+// Starting weather
+// Players spawns indoors
+// Survivor monologue
+
+
+///// ENVIRONEMENT
+
+// Length of day mult
+// Weather variance
+// Blizzard freq
+// Worlds gets colder other time
+// Wind variance
+// Aurora freq
+// Fire overcomes air temp
+
+
+///// HEALTH
+
+// Calorie burn rate
+// Thirst rate
+// Fatigue rate
+// Freezing rate
+// At rest condition rec rate
+// Condition rest rate
+// Hypothermia rec time
+// Frostbite rate
+// Cabin fever
+// Parasites
+// Dysentery
+// Sprains
+// Food poison
+// Broken ribs
+// Rest as a resource
+// Fire prevents freezing
+// Wakes up if freezing
+
+
+///// GEAR
+
+// Item decay rate
+// Loose item availability
+// Empty container chance
+// Stick, branch, stone spawn freq
+// Starting gear allocation
+// Rifle availability
+// Harvestable plant availability
+// Reduce container item density
+
+
+///// WILDLIFE SPAWNS
+
+// Fish
+// Wolf
+// Deer
+// Rabbit
+// Bear
+// Moose
+// Wildlife respawn frequency
+// Reduce wildlife pop over time
+// Wolf spawn distance
+// Predator grace period
+
+
+///// WILDLIFE BEHAVIOUR
+
+// Smell range
+// Scent increase from meat/blood
+// Passive wildlife
+// Attacks during rest
+// Wolf fear
+// Detection range
+
+
+///// WILDLIFE STRUGGLE
+
+// Fighting back bonue
+// Condition damage
+// Clothing damage
+// Damage severity

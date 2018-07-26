@@ -5,3 +5,5 @@ TLD_CustomChallengeDifficulties.sln
 TLD_CustomChallengeDifficulties.csproj.user
 obj
 bin
+java/bin
+.settings

@@ -1,104 +1,278 @@
-# This is a file. Please make docs.
-# It is not possible to comment variables.
-
+#####
+# This is a settings file that contains all the variables from the "Custom difficulty" screen in TLD.
+# Each parameter can here be set. These parameters will define the difficulty of all the challenges you play.
+# That way, you can finally simulate a custom difficulty on challenges.
 #
-m_DayNightDurationScale = 
+# Some parameters are not smart to use in challenges, like the choice of the starting location or the no-rifle spawn.
+# => These parameters are not used by the Patch if the Challenge loaded needs specific settings.
+# For example, it is possible to start Nomad in any location you want. But in other challenges, you can't.
+# Another example, in white-out, you can't turn off Rifle-spawn, as you need it to finish the challenge.
+# 
+# In this file, you will find a list, as seen in game, of all the parameters one could set.
+# For each parameter, you must use of the possible commented values.
+# /!\ !!Beware!! 
+#     -> Parameters are case sensitive ! So "High" and "high" are not the same thing. Using wrong case makes the Patch not work.
+#     -> All parameters must be set. Even specific parameters like starting location.
+# 
+# Lines that start with a # are ignored.
+#####
 
-#
-m_WeatherDurationScale = 
+### GAME START
 
-#
-m_ChanceOfBlizzardScale = 
+# Baseline resource availability
+# Values can be either of Low, Medium, High, VeryHigh
+m_BaseWorldDifficulty = 
 
-#
-m_CalorieBurnScale = 
+# Starting time of day
+# Values can be either of Dawn, Noon, Dusk, Midnight, Random
+m_StartTimeOfDay = 
 
-#
-m_ThirstRateScale = 
+# Starting weather
+# Values can be either of Clear, LightSnow, HeavySnow, Blizzard, LightFog, DenseFog, Random
+m_StartWeather = 
 
-#
-m_FreezingRateScale = 
+# Players spawns indoors
+# Values can be either of true, false
+m_AllowInteriorStartingSpawn = 
 
-#
-m_FatigueRateScale = 
+# Survivor monologue
+# Values can be either of true, false
+m_SurvivorVoiceOver = 
 
-#
-m_ConditonRecoveryFromRestScale = 
 
-#
-m_ConditonRecoveryWhileAwakeScale = 
 
-#
-m_DecayScale = 
+### ENVIRONEMENT
 
-#
-m_GearSpawnChanceScale = 
+# Length of day mult
+# Values can be either of OneX, TwoX, ThreeX, FourX
+m_DayNightLengthMultiplier = 
 
-#
-m_ReduceMaxItemsInContainer = 
+# Weather variance
+# Values can be either of Low, Medium, High, VeryHigh
+m_WeatherChangeFrequency = 
 
-#
-m_ChanceForEmptyContainer = 
+# Blizzard freq
+# Values can be either of None, Low, Medium, High, VeryHigh
+m_BlizzardFrequency = 
 
-#
-m_SpawnRegionChanceActiveScale = 
+# Worlds gets colder other time
+# Values can be either of None, Low, Medium, High
+m_GradualTempReductionRate = 
 
-#
-m_ClosestSpawnDistanceAfterTransitionScale = 
+# Wind variance
+# Values can be either of Low, Medium, High
+m_WindVariability = 
 
-#
-m_SmellRangeScale = 
+# Aurora freq
+# Values can be either of None, Low, Medium, High
+m_AuroraFrequency = 
 
-#
-m_StruggleTapStrengthScale = 
+# Fire overcomes air temp
+# Values can be either of true, false
+m_UseMinAirTempValue = 
 
-#
-m_StrugglePlayerDamageReceivedIntervalScale = 
 
-#
-m_StrugglePlayerDamageReceivedScale = 
+# UNUSED ???
+# Values can be either of true, false
+# m_WeakIce = true
 
-#
-m_StrugglePlayerClothingDamageScale = 
 
-#
-m_StugglePlayerPercentLossFromBearScale = 
 
-#
-m_OutdoorTempDropCelsiusMax = 
+### HEALTH
 
-#
-m_OutdoorTempDropDayStart = 
+# Calorie burn rate
+# Values can be either of Low, Medium, High, VeryHigh
+m_CalorieBurnRate = 
 
-#
-m_OutdoorTempDropDayFinal = 
+# Thirst rate
+# Values can be either of Low, Medium, High, VeryHigh
+m_ThirstIncrease = 
 
-#
-m_RespawnHoursScaleMax = 
+# Fatigue rate
+# Values can be either of Low, Medium, High, VeryHigh
+m_FatigueIncrease = 
 
-#
-m_RespawnHoursScaleDayStart = 
+# Freezing rate
+# Values can be either of Low, Medium, High, VeryHigh
+m_FreezingIncrease = 
 
-#
-m_RespawnHoursScaleDayFinal = 
+# At rest condition rec rate
+# Values can be either of None, Low, Medium, High, VeryHigh
+m_ConditionRecoveryRest = 
 
-#
-m_FishCatchTimeScaleMax = 
+# Condition rec rate
+# Values can be either of None, Low, Medium, High, VeryHigh
+m_ConditionRecoveryAwake = 
 
-#
-m_FishCatchTimeScaleDayStart = 
+# Hypothermia rec time
+# Values can be either of Low, Medium, High, VeryHigh
+m_HoursWarmthToCureHypothermia = 
 
-#
-m_FishCatchTimeScaleDayFinal = 
+# Frostbite rate
+# Values can be either of None, Low, Medium, High, VeryHigh
+m_FrosbiteRisk = 
 
-#
-m_RadialRespawnTimeScaleMax = 
+# Cabin fever
+# Values can be either of true, false
+m_CabinFeverEnabled = 
 
-#
-m_RadialRespawnTimeScaleDayStart = 
+# Parasites
+# Values can be either of true, false
+m_ParasitesEnabled = 
 
-#
-m_RadialRespawnTimeScaleDayFinal = 
+# Dysentery
+# Values can be either of true, false
+m_EnableDysentery = 
 
-#
-m_NumHoursWarmForHypothermiaCureScale = 
+# Sprains
+# Values can be either of true, false
+m_EnableSprains = 
+
+# Food poison
+# Values can be either of true, false
+m_EnableFoodPoisoning = 
+
+# Broken ribs
+# Values can be either of true, false
+m_EnableBrokenRibs = 
+
+# Rest as a resource
+# Values can be either of true, false
+m_LimitedRest = 
+
+# Fire prevents freezing
+# Values can be either of true, false
+m_AdjustFreezingDueToNearbyFire = 
+
+# Wakes up if freezing
+# Values can be either of true, false
+m_InterruptIfFreezingWhileSleeping = 
+
+
+
+### GEAR
+
+# Item decay rate
+# Values can be either of Low, Medium, High, VeryHigh
+m_ItemDecayRate = 
+
+# Loose item availability
+# Values can be either of Low, Medium, High, VeryHigh
+m_ItemSpawnChance = 
+
+# Empty container chance
+# Values can be either of None, Low, Medium, High
+m_EmptyContainerChance = 
+
+# Stick, branch, stone spawn freq
+# Values can be either of Low, Medium, High, VeryHigh
+m_StickBranchStoneSpawnFrequency = 
+
+# Starting gear allocation
+# Values can be either of Low, Medium, High, VeryHigh
+m_StartingGear = 
+
+# Rifle availability
+# Values can be either of true, false
+m_RiflesInWorld = 
+
+# Harvestable plant availability
+# Values can be either of Low, Medium, High
+m_PlantSpawnFrequency = 
+
+# Reduce container item density
+# Values can be either of None, Low, High
+m_ReduceMaxItemsContainers = 
+
+
+
+### WILDLIFE SPAWNS
+
+# Fish
+# Values can be either of None, Low, Medium, High, VeryHigh
+m_FishSpawnChance = 
+
+# Wolf
+# Values can be either of None, Low, Medium, High, VeryHigh
+m_WolfSpawnChance = 
+
+# Deer
+# Values can be either of None, Low, Medium, High, VeryHigh
+m_DeerSpawnChance = 
+
+# Rabbit
+# Values can be either of None, Low, Medium, High, VeryHigh
+m_RabbitSpawnChance = 
+
+# Bear
+# Values can be either of None, Low, Medium, High, VeryHigh
+m_BearSpawnChance = 
+
+# Moose
+# Values can be either of None, Low, Medium, High, VeryHigh
+m_MooseSpawnChance = 
+
+# Wildlife respawn frequency
+# Values can be either of Low, Medium, High, VeryHigh
+m_WildlifeSpawnFrequency = 
+
+# Reduce wildlife pop over time
+# Values can be either of None, Low, Medium, High
+m_ReduceWildlifePopOverTime = 
+
+# Wolf spawn distance
+# Values can be either of Close, Medium, Far
+m_WolfSpawnDistance = 
+
+# Predator grace period
+# Values can be either of true, false
+m_NoPredatorsFirstDay = 
+
+
+
+### WILDLIFE BEHAVIOUR
+
+# Smell range
+# Values can be either of Low, Medium, High, VeryHigh
+m_WildlifeSmellRange = 
+
+# Scent increase from meat/blood
+# Values can be either of None, Low, Medium, High
+m_ScentIncreaseFromMeatBlood = 
+
+# Passive wildlife
+# Values can be either of true, false
+m_WildlifeNotAttackUnprovoked = 
+
+# Attacks during rest
+# Values can be either of true, false
+m_WildlifeInterruptRest = 
+
+# Wolf fear
+# Values can be either of None, Low, Medium, High
+m_WolfFleeChance = 
+
+# Detection range
+# Values can be either of Close, Medium, Far
+m_WildlifeDetectionRange = 
+
+
+
+### WILDLIFE STRUGGLE
+
+# Fighting back bonus
+# Values can be either of None, Low, Medium, High
+m_StrugglePlayerStrengthBonus = 
+
+# Condition damage
+# Values can be either of None, Low, Medium, High
+m_StruggleDamageReceivedBonus = 
+
+# Clothing damage
+# Values can be either of None, Low, Medium, High
+m_StruggleClothingDamageBonus = 
+
+# Damage severity
+# Values can be either of Low, Medium, High, VeryHigh
+m_StruggleDamageEventSeverity = 
+
