@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using CustomChallengeDifficulties;
 using Harmony;
 using UnityEngine;
 
-namespace TLD_CustomChallengeDifficulties.src.patch {
+namespace CustomChallengeDifficulties {
 
     // Experience mode patch.
     [HarmonyPatch(typeof(ExperienceMode), "Start", new Type[0])]
