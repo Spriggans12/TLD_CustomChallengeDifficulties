@@ -30,40 +30,65 @@ namespace CustomChallengeDifficulties {
                 // < OK
                 // > KO needs to be loaded from different stuff
 
-                //__instance.m_DayNightDurationScale = DifficultySettings.m_DayNightDurationScale;
-                //__instance.m_WeatherDurationScale = DifficultySettings.m_WeatherDurationScale;
-                //__instance.m_ChanceOfBlizzardScale = DifficultySettings.m_ChanceOfBlizzardScale;
-                //__instance.m_CalorieBurnScale = DifficultySettings.m_CalorieBurnScale;
-                //__instance.m_ThirstRateScale = DifficultySettings.m_ThirstRateScale;
-                //__instance.m_FreezingRateScale = DifficultySettings.m_FreezingRateScale;
-                //__instance.m_FatigueRateScale = DifficultySettings.m_FatigueRateScale;
-                //__instance.m_ConditonRecoveryFromRestScale = DifficultySettings.m_ConditonRecoveryFromRestScale;
-                //__instance.m_ConditonRecoveryWhileAwakeScale = DifficultySettings.m_ConditonRecoveryWhileAwakeScale;
-                //__instance.m_DecayScale = DifficultySettings.m_DecayScale;
-                //__instance.m_GearSpawnChanceScale = DifficultySettings.m_GearSpawnChanceScale;
-                //__instance.m_ReduceMaxItemsInContainer = DifficultySettings.m_ReduceMaxItemsInContainer;
-                //__instance.m_ChanceForEmptyContainer = DifficultySettings.m_ChanceForEmptyContainer;
-                //__instance.m_SpawnRegionChanceActiveScale = DifficultySettings.m_SpawnRegionChanceActiveScale;
-                //__instance.m_ClosestSpawnDistanceAfterTransitionScale = DifficultySettings.m_ClosestSpawnDistanceAfterTransitionScale;
-                //__instance.m_SmellRangeScale = DifficultySettings.m_SmellRangeScale;
-                //__instance.m_StruggleTapStrengthScale = DifficultySettings.m_StruggleTapStrengthScale;
-                //__instance.m_StrugglePlayerDamageReceivedIntervalScale = DifficultySettings.m_StrugglePlayerDamageReceivedIntervalScale;
-                //__instance.m_StrugglePlayerDamageReceivedScale = DifficultySettings.m_StrugglePlayerDamageReceivedScale;
-                //__instance.m_StrugglePlayerClothingDamageScale = DifficultySettings.m_StrugglePlayerClothingDamageScale;
-                //__instance.m_StugglePlayerPercentLossFromBearScale = DifficultySettings.m_StugglePlayerPercentLossFromBearScale;
-                //__instance.m_OutdoorTempDropCelsiusMax = DifficultySettings.m_OutdoorTempDropCelsiusMax;
-                //__instance.m_OutdoorTempDropDayStart = DifficultySettings.m_OutdoorTempDropDayStart;
-                //__instance.m_OutdoorTempDropDayFinal = DifficultySettings.m_OutdoorTempDropDayFinal;
-                //__instance.m_RespawnHoursScaleMax = DifficultySettings.m_RespawnHoursScaleMax;
-                //__instance.m_RespawnHoursScaleDayStart = DifficultySettings.m_RespawnHoursScaleDayStart;
-                //__instance.m_RespawnHoursScaleDayFinal = DifficultySettings.m_RespawnHoursScaleDayFinal;
-                //__instance.m_FishCatchTimeScaleMax = DifficultySettings.m_FishCatchTimeScaleMax;
-                //__instance.m_FishCatchTimeScaleDayStart = DifficultySettings.m_FishCatchTimeScaleDayStart;
-                //__instance.m_FishCatchTimeScaleDayFinal = DifficultySettings.m_FishCatchTimeScaleDayFinal;
-                //__instance.m_RadialRespawnTimeScaleMax = DifficultySettings.m_RadialRespawnTimeScaleMax;
-                //__instance.m_RadialRespawnTimeScaleDayStart = DifficultySettings.m_RadialRespawnTimeScaleDayStart;
-                //__instance.m_RadialRespawnTimeScaleDayFinal = DifficultySettings.m_RadialRespawnTimeScaleDayFinal;
-                //__instance.m_NumHoursWarmForHypothermiaCureScale = DifficultySettings.m_NumHoursWarmForHypothermiaCureScale;
+                CustomExperienceModeManager component = new CustomExperienceModeManager();
+                List<ExperienceMode> list = new List<ExperienceMode>();
+                list.Add(GameManager.GetExperienceModeManagerComponent().GetSpecificExperienceMode(ExperienceModeType.Pilgrim));
+                list.Add(GameManager.GetExperienceModeManagerComponent().GetSpecificExperienceMode(ExperienceModeType.Voyageur));
+                list.Add(GameManager.GetExperienceModeManagerComponent().GetSpecificExperienceMode(ExperienceModeType.Stalker));
+                list.Add(GameManager.GetExperienceModeManagerComponent().GetSpecificExperienceMode(ExperienceModeType.Interloper));
+
+
+                __instance.m_DayNightDurationScale = (float) (DifficultySettings.m_DayNightLengthMultiplier + 1);
+                __instance.m_WeatherDurationScale = list[(int)(CustomExperienceModeManager.CustomTunableLMHV.VeryHigh - DifficultySettings.m_WeatherChangeFrequency)].m_WeatherDurationScale;
+                if (DifficultySettings.m_BlizzardFrequency == CustomExperienceModeManager.CustomTunableNLMHV.None) {
+                    __instance.m_ChanceOfBlizzardScale = 0f;
+                } else {
+                    __instance.m_ChanceOfBlizzardScale = list[DifficultySettings.m_BlizzardFrequency - CustomExperienceModeManager.CustomTunableNLMHV.Low].m_ChanceOfBlizzardScale;
+                }
+                if (DifficultySettings.m_CalorieBurnRate == CustomExperienceModeManager.CustomTunableLMHV.Medium) {
+                    __instance.m_CalorieBurnScale = list[2].m_CalorieBurnScale;
+                } else if (DifficultySettings.m_CalorieBurnRate == CustomExperienceModeManager.CustomTunableLMHV.High) {
+                    __instance.m_CalorieBurnScale = list[1].m_CalorieBurnScale;
+                } else {
+                    __instance.m_CalorieBurnScale = list[(int)DifficultySettings.m_CalorieBurnRate].m_CalorieBurnScale;
+                }
+                __instance.m_ThirstRateScale = component.m_ThirstScaleList[(int)DifficultySettings.m_ThirstIncrease];
+                __instance.m_FreezingRateScale = list[(int)DifficultySettings.m_FreezingIncrease].m_FreezingRateScale;
+                __instance.m_FatigueRateScale = component.m_FatigueScaleList[(int)DifficultySettings.m_FatigueIncrease];
+                __instance.m_ConditonRecoveryFromRestScale = component.m_ConditionRecoveryRestList[(int)DifficultySettings.m_ConditionRecoveryRest];
+                __instance.m_ConditonRecoveryWhileAwakeScale = component.m_ConditionRecoveryAwakeList[(int)DifficultySettings.m_ConditionRecoveryAwake];
+                __instance.m_DecayScale = list[(int)DifficultySettings.m_ItemDecayRate].m_DecayScale;
+                __instance.m_GearSpawnChanceScale = list[(int)(CustomExperienceModeManager.CustomTunableLMHV.VeryHigh - DifficultySettings.m_ItemSpawnChance)].m_GearSpawnChanceScale;
+                __instance.m_ReduceMaxItemsInContainer = list[(int)(DifficultySettings.m_ReduceMaxItemsContainers + 1)].m_ReduceMaxItemsInContainer;
+                __instance.m_ChanceForEmptyContainer = component.m_EmptyContainerChanceList[(int)DifficultySettings.m_EmptyContainerChance];
+                __instance.m_SpawnRegionChanceActiveScale = 1f;
+                __instance.m_ClosestSpawnDistanceAfterTransitionScale = list[(int)((CustomExperienceModeManager.CustomTunableDistance)3 - DifficultySettings.m_WolfSpawnDistance)].m_ClosestSpawnDistanceAfterTransitionScale;
+                __instance.m_SmellRangeScale = component.m_SmellRangeList[(int)DifficultySettings.m_WildlifeSmellRange];
+                if (DifficultySettings.m_StrugglePlayerStrengthBonus == CustomExperienceModeManager.CustomTunableNLMH.None) {
+                    __instance.m_StruggleTapStrengthScale = list[2].m_StruggleTapStrengthScale;
+                } else if (DifficultySettings.m_StrugglePlayerStrengthBonus == CustomExperienceModeManager.CustomTunableNLMH.Low) {
+                    __instance.m_StruggleTapStrengthScale = list[3].m_StruggleTapStrengthScale;
+                } else {
+                    __instance.m_StruggleTapStrengthScale = list[(int)(CustomExperienceModeManager.CustomTunableNLMH.High - DifficultySettings.m_StrugglePlayerStrengthBonus)].m_StruggleTapStrengthScale;
+                }
+                __instance.m_StrugglePlayerDamageReceivedScale = component.m_StruggleDamageReceivedList[(int)DifficultySettings.m_StruggleDamageReceivedBonus];
+                __instance.m_StrugglePlayerClothingDamageScale = component.m_StruggleClothingDamageList[(int)DifficultySettings.m_StruggleClothingDamageBonus];
+                __instance.m_StrugglePlayerDamageReceivedIntervalScale = 1f;
+                __instance.m_StugglePlayerPercentLossFromBearScale = 1f;
+                __instance.m_OutdoorTempDropCelsiusMax = list[(int)DifficultySettings.m_GradualTempReductionRate].m_OutdoorTempDropCelsiusMax;
+                __instance.m_OutdoorTempDropDayStart = list[(int)DifficultySettings.m_GradualTempReductionRate].m_OutdoorTempDropDayStart;
+                __instance.m_OutdoorTempDropDayFinal = list[(int)DifficultySettings.m_GradualTempReductionRate].m_OutdoorTempDropDayFinal;
+                __instance.m_RespawnHoursScaleMax = list[(int)DifficultySettings.m_ReduceWildlifePopOverTime].m_RespawnHoursScaleMax;
+                __instance.m_RespawnHoursScaleDayStart = list[(int)DifficultySettings.m_ReduceWildlifePopOverTime].m_RespawnHoursScaleDayStart;
+                __instance.m_RespawnHoursScaleDayFinal = list[(int)DifficultySettings.m_ReduceWildlifePopOverTime].m_RespawnHoursScaleDayFinal;
+                __instance.m_FishCatchTimeScaleMax = component.m_FishCatchTimeScaleMaxList[(int)DifficultySettings.m_FishSpawnChance];
+                __instance.m_FishCatchTimeScaleDayStart = component.m_FishCatchTimeScaleDayStartList[(int)DifficultySettings.m_FishSpawnChance];
+                __instance.m_FishCatchTimeScaleDayFinal = component.m_FishCatchTimeScaleDayFinalList[(int)DifficultySettings.m_FishSpawnChance];
+                __instance.m_RadialRespawnTimeScaleMax = list[(int)(CustomExperienceModeManager.CustomTunableLMHV.VeryHigh - DifficultySettings.m_StickBranchStoneSpawnFrequency)].m_RadialRespawnTimeScaleMax;
+                __instance.m_RadialRespawnTimeScaleDayStart = list[(int)(CustomExperienceModeManager.CustomTunableLMHV.VeryHigh - DifficultySettings.m_StickBranchStoneSpawnFrequency)].m_RadialRespawnTimeScaleDayStart;
+                __instance.m_RadialRespawnTimeScaleDayFinal = list[(int)(CustomExperienceModeManager.CustomTunableLMHV.VeryHigh - DifficultySettings.m_StickBranchStoneSpawnFrequency)].m_RadialRespawnTimeScaleDayFinal;
+                __instance.m_NumHoursWarmForHypothermiaCureScale = list[(int)DifficultySettings.m_HoursWarmthToCureHypothermia].m_NumHoursWarmForHypothermiaCureScale;
+
             }
         }
     }

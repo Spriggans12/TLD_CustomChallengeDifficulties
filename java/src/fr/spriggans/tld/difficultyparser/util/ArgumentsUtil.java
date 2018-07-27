@@ -20,8 +20,7 @@ public class ArgumentsUtil {
 
 	private static final String OPT_INTERLOPER = "-interloper";
 
-	// TODO : Use the correct value
-	private static final String PILGRIM_STRING = "8s3HVxkfLx+zJL+OrgAA";
+	private static final String PILGRIM_STRING = "+38wgsDwKFDgoy15RAAA";
 
 	// TODO
 	private static final String VOYAGER_STRING = "";
@@ -29,8 +28,7 @@ public class ArgumentsUtil {
 	// TODO
 	private static final String STALKER_STRING = "";
 
-	// TODO
-	private static final String INTERLOPER_STRING = "";
+	private static final String INTERLOPER_STRING = "8sHMbj8PKxsn2aKOLgEA";
 
 	/**
 	 * List of existing parameters.
