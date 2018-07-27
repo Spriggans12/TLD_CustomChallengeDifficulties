@@ -1,3 +1,3 @@
 cd ../bin
-jar -cvfm ../make/createDifficultySettingsFileFromString.jar ../make/manifest.txt *
+jar -cvfm ../make/ParseSettings.jar ../make/manifest.txt *
 cd ../make

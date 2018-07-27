@@ -1,2 +1,2 @@
 Manifest-Version: 1.0
-Main-Class: fr.spriggans.df.RandomizeAdventurerPoints
+Main-Class: fr.spriggans.tld.difficultyparser.Main
