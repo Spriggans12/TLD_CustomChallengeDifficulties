@@ -9,11 +9,9 @@ using static CustomExperienceModeManager;
  * This file can be edited prior to launching the game.
  * You can use the JAVA program to generate a difficulty_settings file from a String dump of an in-game Custom difficulty (cf documentation for how to use it)
  */
-namespace CustomChallengeDifficulties
-{
+namespace CustomChallengeDifficulties {
 
-    public static class DifficultySettings
-    {
+    public static class DifficultySettings {
 
         public static string FILE = "mods/customChallengesSettings/difficulty_settings.txt";
 
@@ -86,13 +84,67 @@ namespace CustomChallengeDifficulties
         /////////
         /////////
 
-        public static void Load()
-        {
+        public static void Load() {
             List<VariableAndSetter> varList = new List<VariableAndSetter> {
-                new VariableAndSetter("BaseWorldDifficulty", x => m_BaseWorldDifficulty = (CustomTunableLMHV) x),
+                new VariableAndSetter("AllowInteriorStartingSpawn", x => m_AllowInteriorStartingSpawn = (bool)x, typeof(bool)),
+                new VariableAndSetter("SurvivorVoiceOver", x => m_SurvivorVoiceOver = (bool)x, typeof(bool)),
+                new VariableAndSetter("WeakIce", x => m_WeakIce = (bool)x, typeof(bool)),
+                new VariableAndSetter("UseMinAirTempValue", x => m_UseMinAirTempValue = (bool)x, typeof(bool)),
+                new VariableAndSetter("EnableDysentery", x => m_EnableDysentery = (bool)x, typeof(bool)),
+                new VariableAndSetter("EnableSprains", x => m_EnableSprains = (bool)x, typeof(bool)),
+                new VariableAndSetter("EnableFoodPoisoning", x => m_EnableFoodPoisoning = (bool)x, typeof(bool)),
+                new VariableAndSetter("EnableBrokenRibs", x => m_EnableBrokenRibs = (bool)x, typeof(bool)),
+                new VariableAndSetter("LimitedRest", x => m_LimitedRest = (bool)x, typeof(bool)),
+                new VariableAndSetter("AdjustFreezingDueToNearbyFire", x => m_AdjustFreezingDueToNearbyFire = (bool)x, typeof(bool)),
+                new VariableAndSetter("InterruptIfFreezingWhileSleeping", x => m_InterruptIfFreezingWhileSleeping = (bool)x, typeof(bool)),
+                new VariableAndSetter("RiflesInWorld", x => m_RiflesInWorld = (bool)x, typeof(bool)),
+                new VariableAndSetter("BaseWorldDifficulty", x => m_BaseWorldDifficulty = (CustomTunableLMHV)x, typeof(CustomTunableLMHV)),
+                new VariableAndSetter("StruggleClothingDamageBonus", x => m_StruggleClothingDamageBonus = (CustomTunableNLMH)x, typeof(CustomTunableNLMH)),
+                new VariableAndSetter("DayNightLengthMultiplier", x => m_DayNightLengthMultiplier = (CustomTunableDayNightMultiplier)x, typeof(CustomTunableDayNightMultiplier)),
+                new VariableAndSetter("WeatherChangeFrequency", x => m_WeatherChangeFrequency = (CustomTunableLMHV)x, typeof(CustomTunableLMHV)),
+                new VariableAndSetter("StrugglePlayerStrengthBonus", x => m_StrugglePlayerStrengthBonus = (CustomTunableNLMH)x, typeof(CustomTunableNLMH)),
+                new VariableAndSetter("GradualTempReductionRate", x => m_GradualTempReductionRate = (CustomTunableNLMH)x, typeof(CustomTunableNLMH)),
+                new VariableAndSetter("AuroraFrequency", x => m_AuroraFrequency = (CustomTunableNLMH)x, typeof(CustomTunableNLMH)),
+                new VariableAndSetter("CalorieBurnRate", x => m_CalorieBurnRate = (CustomTunableLMHV)x, typeof(CustomTunableLMHV)),
+                new VariableAndSetter("ThirstIncrease", x => m_ThirstIncrease = (CustomTunableLMHV)x, typeof(CustomTunableLMHV)),
+                new VariableAndSetter("FatigueIncrease", x => m_FatigueIncrease = (CustomTunableLMHV)x, typeof(CustomTunableLMHV)),
+                new VariableAndSetter("FreezingIncrease", x => m_FreezingIncrease = (CustomTunableLMHV)x, typeof(CustomTunableLMHV)),
+                new VariableAndSetter("HoursWarmthToCureHypothermia", x => m_HoursWarmthToCureHypothermia = (CustomTunableLMHV)x, typeof(CustomTunableLMHV)),
+                new VariableAndSetter("ItemDecayRate", x => m_ItemDecayRate = (CustomTunableLMHV)x, typeof(CustomTunableLMHV)),
+                new VariableAndSetter("ItemSpawnChance", x => m_ItemSpawnChance = (CustomTunableLMHV)x, typeof(CustomTunableLMHV)),
+                new VariableAndSetter("ReduceWildlifePopOverTime", x => m_ReduceWildlifePopOverTime = (CustomTunableNLMH)x, typeof(CustomTunableNLMH)),
+                new VariableAndSetter("EmptyContainerChance", x => m_EmptyContainerChance = (CustomTunableNLMH)x, typeof(CustomTunableNLMH)),
+                new VariableAndSetter("StickBranchStoneSpawnFrequency", x => m_StickBranchStoneSpawnFrequency = (CustomTunableLMHV)x, typeof(CustomTunableLMHV)),
+                new VariableAndSetter("StartingGear", x => m_StartingGear = (CustomTunableLMHV)x, typeof(CustomTunableLMHV)),
+                new VariableAndSetter("StruggleDamageReceivedBonus", x => m_StruggleDamageReceivedBonus = (CustomTunableNLMH)x, typeof(CustomTunableNLMH)),
+                new VariableAndSetter("ScentIncreaseFromMeatBlood", x => m_ScentIncreaseFromMeatBlood = (CustomTunableNLMH)x, typeof(CustomTunableNLMH)),
+                new VariableAndSetter("WolfFleeChance", x => m_WolfFleeChance = (CustomTunableNLMH)x, typeof(CustomTunableNLMH)),
+                new VariableAndSetter("StruggleDamageEventSeverity", x => m_StruggleDamageEventSeverity = (CustomTunableLMHV)x, typeof(CustomTunableLMHV)),
+                new VariableAndSetter("WildlifeSmellRange", x => m_WildlifeSmellRange = (CustomTunableLMHV)x, typeof(CustomTunableLMHV)),
+                new VariableAndSetter("WildlifeSpawnFrequency", x => m_WildlifeSpawnFrequency = (CustomTunableLMHV)x, typeof(CustomTunableLMHV)),
+                new VariableAndSetter("WildlifeNotAttackUnprovoked", x => m_WildlifeNotAttackUnprovoked = (bool)x, typeof(bool)),
+                new VariableAndSetter("NoPredatorsFirstDay", x => m_NoPredatorsFirstDay = (bool)x, typeof(bool)),
+                new VariableAndSetter("CabinFeverEnabled", x => m_CabinFeverEnabled = (bool)x, typeof(bool)),
+                new VariableAndSetter("ParasitesEnabled", x => m_ParasitesEnabled = (bool)x, typeof(bool)),
+                new VariableAndSetter("ConditionRecoveryRest", x => m_ConditionRecoveryRest = (CustomTunableNLMHV)x, typeof(CustomTunableNLMHV)),
+                new VariableAndSetter("ConditionRecoveryAwake", x => m_ConditionRecoveryAwake = (CustomTunableNLMHV)x, typeof(CustomTunableNLMHV)),
+                new VariableAndSetter("FrosbiteRisk", x => m_FrosbiteRisk = (CustomTunableNLMHV)x, typeof(CustomTunableNLMHV)),
+                new VariableAndSetter("RabbitSpawnChance", x => m_RabbitSpawnChance = (CustomTunableNLMHV)x, typeof(CustomTunableNLMHV)),
+                new VariableAndSetter("BearSpawnChance", x => m_BearSpawnChance = (CustomTunableNLMHV)x, typeof(CustomTunableNLMHV)),
+                new VariableAndSetter("BlizzardFrequency", x => m_BlizzardFrequency = (CustomTunableNLMHV)x, typeof(CustomTunableNLMHV)),
+                new VariableAndSetter("DeerSpawnChance", x => m_DeerSpawnChance = (CustomTunableNLMHV)x, typeof(CustomTunableNLMHV)),
+                new VariableAndSetter("FishSpawnChance", x => m_FishSpawnChance = (CustomTunableNLMHV)x, typeof(CustomTunableNLMHV)),
+                new VariableAndSetter("WolfSpawnChance", x => m_WolfSpawnChance = (CustomTunableNLMHV)x, typeof(CustomTunableNLMHV)),
+                new VariableAndSetter("StartTimeOfDay", x => m_StartTimeOfDay = (CustomTunableTimeOfDay)x, typeof(CustomTunableTimeOfDay)),
+                new VariableAndSetter("WildlifeInterruptRest", x => m_WildlifeInterruptRest = (bool)x, typeof(bool)),
+                new VariableAndSetter("WindVariability", x => m_WindVariability = (CustomTunableLMH)x, typeof(CustomTunableLMH)),
+                new VariableAndSetter("PlantSpawnFrequency", x => m_PlantSpawnFrequency = (CustomTunableLMH)x, typeof(CustomTunableLMH)),
+                new VariableAndSetter("ReduceMaxItemsContainers", x => m_ReduceMaxItemsContainers = (CustomTunableNLH)x, typeof(CustomTunableNLH)),
+                new VariableAndSetter("StartWeather", x => m_StartWeather = (CustomTunableWeather)x, typeof(CustomTunableWeather)),
+                new VariableAndSetter("WolfSpawnDistance", x => m_WolfSpawnDistance = (CustomTunableDistance)x, typeof(CustomTunableDistance)),
+                new VariableAndSetter("WildlifeDetectionRange", x => m_WildlifeDetectionRange = (CustomTunableDistance)x, typeof(CustomTunableDistance)),
+                new VariableAndSetter("MooseSpawnChance", x => m_MooseSpawnChance = (CustomTunableNLMHV)x, typeof(CustomTunableNLMHV)),
             };
-
-
 
             SettingsUtil.LoadFromFile(FILE, varList);
         }
