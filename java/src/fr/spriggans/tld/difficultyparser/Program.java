@@ -9,18 +9,18 @@ import fr.spriggans.tld.difficultyparser.writer.FileWritter;
 public class Program {
 
 	private static final String FILE = "./difficulty-settings.txt";
-	
+
 	private DifficutlyParameters diffParams;
 
 	public Program(DifficutlyParameters diffParams) {
 		this.diffParams = diffParams;
 	}
-	
+
 	/**
 	 * @return file location
 	 */
 	public String generateSettingsFile() throws UnsupportedEncodingException, IOException {
 		return FileWritter.generate(FILE, this.diffParams);
 	}
-	
+
 }

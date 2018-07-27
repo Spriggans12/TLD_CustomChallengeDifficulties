@@ -96,7 +96,7 @@ public class FileWritter {
 	private static void writeEnvironement(Writer writer, DifficutlyParameters diffParams) throws IOException {
 		writer.write(ENVIRONEMENT);
 		blankLine(writer);
-		
+
 		writeField(writer, diffParams.getM_DayNightLengthMultiplier());
 		writeField(writer, diffParams.getM_WeatherChangeFrequency());
 		writeField(writer, diffParams.getM_BlizzardFrequency());
@@ -112,7 +112,7 @@ public class FileWritter {
 	private static void writeHealth(Writer writer, DifficutlyParameters diffParams) throws IOException {
 		writer.write(HEALTH);
 		blankLine(writer);
-		
+
 		writeField(writer, diffParams.getM_CalorieBurnRate());
 		writeField(writer, diffParams.getM_ThirstIncrease());
 		writeField(writer, diffParams.getM_FatigueIncrease());
@@ -138,7 +138,7 @@ public class FileWritter {
 	private static void writeGear(Writer writer, DifficutlyParameters diffParams) throws IOException {
 		writer.write(GEAR);
 		blankLine(writer);
-		
+
 		writeField(writer, diffParams.getM_ItemDecayRate());
 		writeField(writer, diffParams.getM_ItemSpawnChance());
 		writeField(writer, diffParams.getM_EmptyContainerChance());
@@ -148,7 +148,6 @@ public class FileWritter {
 		writeField(writer, diffParams.getM_PlantSpawnFrequency());
 		writeField(writer, diffParams.getM_ReduceMaxItemsContainers());
 
-
 		blankLine(writer);
 		blankLine(writer);
 	}
@@ -156,7 +155,7 @@ public class FileWritter {
 	private static void writeWildlifeSpawns(Writer writer, DifficutlyParameters diffParams) throws IOException {
 		writer.write(WILDLIFE_SPAWNS);
 		blankLine(writer);
-		
+
 		writeField(writer, diffParams.getM_FishSpawnChance());
 		writeField(writer, diffParams.getM_WolfSpawnChance());
 		writeField(writer, diffParams.getM_DeerSpawnChance());
@@ -175,7 +174,7 @@ public class FileWritter {
 	private static void writeWildlifeBehaviour(Writer writer, DifficutlyParameters diffParams) throws IOException {
 		writer.write(WILDLIFE_BEHAVIOUR);
 		blankLine(writer);
-		
+
 		writeField(writer, diffParams.getM_WildlifeSmellRange());
 		writeField(writer, diffParams.getM_ScentIncreaseFromMeatBlood());
 		writeField(writer, diffParams.getM_WildlifeNotAttackUnprovoked());
@@ -190,7 +189,7 @@ public class FileWritter {
 	private static void writeWildlifeStruggle(Writer writer, DifficutlyParameters diffParams) throws IOException {
 		writer.write(WILDLIFE_STRUGGLE);
 		blankLine(writer);
-		
+
 		writeField(writer, diffParams.getM_StrugglePlayerStrengthBonus());
 		writeField(writer, diffParams.getM_StruggleDamageReceivedBonus());
 		writeField(writer, diffParams.getM_StruggleClothingDamageBonus());
@@ -204,10 +203,11 @@ public class FileWritter {
 		writer.write("# " + field.getDescription());
 		writer.write(CR_LF);
 		writer.write(VALUES_CAN_BE);
-		if(field.getEnumValue() != null) {
+		if (field.getEnumValue() != null) {
 			Class<?> enumClazz = field.getEnumValue().getClass();
 			List<Object> enumValuesList = Arrays.asList(enumClazz.getEnumConstants());
-			String commaSeparatedValues = enumValuesList.stream().map(e -> e.toString()).collect(Collectors.joining(", "));
+			String commaSeparatedValues = enumValuesList.stream().map(e -> e.toString())
+					.collect(Collectors.joining(", "));
 			writer.write(commaSeparatedValues);
 		}
 		writer.write(CR_LF);

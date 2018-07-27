@@ -65,9 +65,9 @@ public class CSharpBitArray {
 	private int getArrayLength(int n, int div) {
 		return n > 0 ? (((n - 1) / div) + 1) : 0;
 	}
-	
+
 	public void copyTo(int[] dest, int fromIndex) {
-		System.arraycopy(this.array,  0, dest, fromIndex, (this.length + 31) / 32);
+		System.arraycopy(this.array, 0, dest, fromIndex, (this.length + 31) / 32);
 	}
 
 	public boolean get(int index) {

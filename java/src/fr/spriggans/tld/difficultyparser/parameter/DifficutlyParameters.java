@@ -93,20 +93,24 @@ public class DifficutlyParameters {
 	// Item decay rate
 	private final Field<CustomTunables.LMHV> m_ItemDecayRate = new Field<>("Item decay rate", "ItemDecayRate");
 	// Loose item availability
-	private final Field<CustomTunables.LMHV> m_ItemSpawnChance = new Field<>("Loose item availability", "ItemSpawnChance");
+	private final Field<CustomTunables.LMHV> m_ItemSpawnChance = new Field<>("Loose item availability",
+			"ItemSpawnChance");
 	// Empty container chance
-	private final Field<CustomTunables.NLMH> m_EmptyContainerChance = new Field<>("Empty container chance", "EmptyContainerChance");
+	private final Field<CustomTunables.NLMH> m_EmptyContainerChance = new Field<>("Empty container chance",
+			"EmptyContainerChance");
 	// Stick, branch, stone spawn freq
-	private final Field<CustomTunables.LMHV> m_StickBranchStoneSpawnFrequency = new Field<>("Stick, branch, stone spawn freq",
-			"StickBranchStoneSpawnFrequency");
+	private final Field<CustomTunables.LMHV> m_StickBranchStoneSpawnFrequency = new Field<>(
+			"Stick, branch, stone spawn freq", "StickBranchStoneSpawnFrequency");
 	// Starting gear allocation
 	private final Field<CustomTunables.LMHV> m_StartingGear = new Field<>("Starting gear allocation", "StartingGear");
 	// Rifle availability
 	private final Field<CustomTunables.Bool> m_RiflesInWorld = new Field<>("Rifle availability", "RiflesInWorld");
 	// Harvestable plant availability
-	private final Field<CustomTunables.LMH> m_PlantSpawnFrequency = new Field<>("Harvestable plant availability", "PlantSpawnFrequency");
+	private final Field<CustomTunables.LMH> m_PlantSpawnFrequency = new Field<>("Harvestable plant availability",
+			"PlantSpawnFrequency");
 	// Reduce container item density
-	private final Field<CustomTunables.NLH> m_ReduceMaxItemsContainers = new Field<>("Reduce container item density", "ReduceMaxItemsContainers");
+	private final Field<CustomTunables.NLH> m_ReduceMaxItemsContainers = new Field<>("Reduce container item density",
+			"ReduceMaxItemsContainers");
 
 	///// WILDLIFE SPAWNS
 
@@ -117,36 +121,43 @@ public class DifficutlyParameters {
 	// Deer
 	private final Field<CustomTunables.NLMHV> m_DeerSpawnChance = new Field<>("DeerSpawnChance", "DeerSpawnChance");
 	// Rabbit
-	private final Field<CustomTunables.NLMHV> m_RabbitSpawnChance = new Field<>("RabbitSpawnChance", "RabbitSpawnChance");
+	private final Field<CustomTunables.NLMHV> m_RabbitSpawnChance = new Field<>("RabbitSpawnChance",
+			"RabbitSpawnChance");
 	// Bear
 	private final Field<CustomTunables.NLMHV> m_BearSpawnChance = new Field<>("BearSpawnChance", "BearSpawnChance");
 	// Moose
 	private final Field<CustomTunables.NLMHV> m_MooseSpawnChance = new Field<>("MooseSpawnChance", "MooseSpawnChance");
 	// Wildlife respawn frequency
-	private final Field<CustomTunables.LMHV> m_WildlifeSpawnFrequency = new Field<>("Wildlife respawn frequency", "WildlifeSpawnFrequency");
+	private final Field<CustomTunables.LMHV> m_WildlifeSpawnFrequency = new Field<>("Wildlife respawn frequency",
+			"WildlifeSpawnFrequency");
 	// Reduce wildlife pop over time
-	private final Field<CustomTunables.NLMH> m_ReduceWildlifePopOverTime = new Field<>("Reduce wildlife pop over time", "ReduceWildlifePopOverTime");
+	private final Field<CustomTunables.NLMH> m_ReduceWildlifePopOverTime = new Field<>("Reduce wildlife pop over time",
+			"ReduceWildlifePopOverTime");
 	// Wolf spawn distance
-	private final Field<CustomTunables.Distance> m_WolfSpawnDistance = new Field<>("Wolf spawn distance", "WolfSpawnDistance");
+	private final Field<CustomTunables.Distance> m_WolfSpawnDistance = new Field<>("Wolf spawn distance",
+			"WolfSpawnDistance");
 	// Predator grace period
-	private final Field<CustomTunables.Bool> m_NoPredatorsFirstDay = new Field<>("Predator grace period", "NoPredatorsFirstDay");
+	private final Field<CustomTunables.Bool> m_NoPredatorsFirstDay = new Field<>("Predator grace period",
+			"NoPredatorsFirstDay");
 
 	///// WILDLIFE BEHAVIOUR
 
 	// Smell range
 	private final Field<CustomTunables.LMHV> m_WildlifeSmellRange = new Field<>("Smell range", "WildlifeSmellRange");
 	// Scent increase from meat/blood
-	private final Field<CustomTunables.NLMH> m_ScentIncreaseFromMeatBlood = new Field<>("Scent increase from meat/blood",
-			"ScentIncreaseFromMeatBlood");
+	private final Field<CustomTunables.NLMH> m_ScentIncreaseFromMeatBlood = new Field<>(
+			"Scent increase from meat/blood", "ScentIncreaseFromMeatBlood");
 	// Passive wildlife
 	private final Field<CustomTunables.Bool> m_WildlifeNotAttackUnprovoked = new Field<>("Passive wildlife",
 			"WildlifeNotAttackUnprovoked");
 	// Attacks during rest
-	private final Field<CustomTunables.Bool> m_WildlifeInterruptRest = new Field<>("Attacks during rest", "WildlifeInterruptRest");
+	private final Field<CustomTunables.Bool> m_WildlifeInterruptRest = new Field<>("Attacks during rest",
+			"WildlifeInterruptRest");
 	// Wolf fear
 	private final Field<CustomTunables.NLMH> m_WolfFleeChance = new Field<>("Wolf fear", "WolfFleeChance");
 	// Detection range
-	private final Field<CustomTunables.Distance> m_WildlifeDetectionRange = new Field<>("Detection range", "WildlifeDetectionRange");
+	private final Field<CustomTunables.Distance> m_WildlifeDetectionRange = new Field<>("Detection range",
+			"WildlifeDetectionRange");
 
 	///// WILDLIFE STRUGGLE
 

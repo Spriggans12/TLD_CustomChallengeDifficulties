@@ -10,17 +10,15 @@ import fr.spriggans.tld.difficultyparser.util.ArgumentsUtil;
 
 public class Main {
 
-	
-	
 	public static void main(String[] args) throws UnsupportedEncodingException, IOException {
-		final Map<String, List<String>> params =  ArgumentsUtil.parseArgumentsToMap(args);
+		final Map<String, List<String>> params = ArgumentsUtil.parseArgumentsToMap(args);
 		String difficultyString = ArgumentsUtil.getDifficultyString(params);
-		if(difficultyString != null) {
+		if (difficultyString != null) {
 			Program prgm = new Program(new DifficutlyParameters(difficultyString));
 			String fileLocation = prgm.generateSettingsFile();
 			System.out.println("The settings file has been created successfully !");
 			System.out.println("The file is located at : " + fileLocation);
 		}
 	}
-	
+
 }
