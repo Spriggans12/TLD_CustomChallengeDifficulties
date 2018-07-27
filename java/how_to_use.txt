@@ -1,4 +1,4 @@
-This program creates a difficulty settings file to use with the provided mod 'CustomChallengeDifficulties'.
+This program creates a difficulty settings file to use with the provided mod 'TLD_CustomChallengeDifficulties'.
 
 This program is not related to the Patching of challenges' difficulties.
 It is only useful to easily create a settings file from a String.
@@ -20,7 +20,9 @@ It should be mentioned that to use this program, you need a Java version of at l
 
 		java -jar ParseSettings.jar -s ENTER_YOUR_CUSTOM_STRING_HERE
 
-	where 'ENTER_YOUR_CUSTOM_STRING_HERE' is the "custom difficulty" String acquired from TLD
+	where 'ENTER_YOUR_CUSTOM_STRING_HERE' is the "custom difficulty" String acquired from TLD :
+		- You can create your custom difficulty in TLD by using the user-friendly interface and by "Sharing the code".
+		- The "Code" is the String you pass as a parameter.
 
 	
 2.bis.

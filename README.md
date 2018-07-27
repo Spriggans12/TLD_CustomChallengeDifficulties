@@ -1,10 +1,10 @@
 # TLD_CustomChallengeDifficulties
 
-TODO doc.
+TODO this README.
 
 TODO app.
 
-TODO java difficulty parser
+TODO : move src to csharp/src
 
-Please use ILSpy to read Assembly-CSharp.dll
-
+TODO fix java preset values
+TODO fix java settings variable explaination

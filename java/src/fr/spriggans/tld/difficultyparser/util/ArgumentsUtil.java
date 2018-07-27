@@ -163,7 +163,7 @@ public class ArgumentsUtil {
 
 	private static void printHelp() {
 		System.err.println(
-				"This program creates a difficulty settings file to use with the provided mod 'CustomChallengeDifficulties'.");
+				"This program creates a difficulty settings file to use with the provided mod 'TLD_CustomChallengeDifficulties'.");
 		System.err.println(
 				"You can either use predifined game difficulties, or get a custom difficulty from a string you can find in-game.");
 		System.err.println("The file created should be located next to this jar file.");
