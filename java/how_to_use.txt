@@ -1,0 +1,40 @@
+This program creates a difficulty settings file to use with the provided mod 'CustomChallengeDifficulties'.
+
+This program is not related to the Patching of challenges' difficulties.
+It is only useful to easily create a settings file from a String.
+
+The String mentioned is acquired from TLD : when you create a custom difficulty and share it, TLD gives you a String.
+
+It should be mentioned that to use this program, you need a Java version of at least 8.
+
+**************
+* HOW TO RUN *
+**************
+
+1.
+	Open a command prompt in this directory.
+
+	
+2.
+	Type the following command :
+
+		java -jar ParseSettings.jar -s ENTER_YOUR_CUSTOM_STRING_HERE
+
+	where 'ENTER_YOUR_CUSTOM_STRING_HERE' is the "custom difficulty" String acquired from TLD
+
+	
+2.bis.
+	Alternatively, there is a way to use "standard" difficulties.
+	The commands :
+
+		java -jar ParseSettings.jar --pilgrim
+		java -jar ParseSettings.jar --voyager
+		java -jar ParseSettings.jar --stalker
+		java -jar ParseSettings.jar --interloper
+
+	will create a file with the asked difficulty settings.
+
+
+3.
+	A file called "difficulty-settings.txt" will be generated in the current directory.
+	Use this file instead of the one provided and enjoy your time.
