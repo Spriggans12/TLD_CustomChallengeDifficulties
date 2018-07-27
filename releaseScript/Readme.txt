@@ -83,7 +83,8 @@ In the "customChallengesSettings" folder, you have several files.
 	While it can be edited manually, there is a convenience alternative (see 2bis/ below).
 
 2bis/
-	If, like me, you are lazy, you probably won't want to manually go trough the difficulty-settings.txt file.
+	If, like me, you are lazy, you probably won't want to manually go trough the difficulty_settings.txt file.
+	If, like me, you are lazy, you probably won't want to manually go trough the difficulty_settings.txt file.
 	So, you can use the stringParser utility (provided with the mod).
 	I won't explain here how to use it, please go to the stringParser folder and read the "how_to_use.txt" file.
 	

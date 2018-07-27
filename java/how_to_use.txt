@@ -38,5 +38,5 @@ It should be mentioned that to use this program, you need a Java version of at l
 
 
 3.
-	A file called "difficulty-settings.txt" will be generated in the current directory.
+	A file called "difficulty_settings.txt" will be generated in the current directory.
 	Use this file instead of the one provided and enjoy your time.

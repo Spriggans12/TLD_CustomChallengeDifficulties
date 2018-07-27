@@ -22,23 +22,23 @@
 
 # Baseline resource availability
 # Values can be either of Low, Medium, High, VeryHigh
-BaseWorldDifficulty = 
+BaseWorldDifficulty = Low
 
 # Starting time of day
 # Values can be either of Dawn, Noon, Dusk, Midnight, Random
-StartTimeOfDay = 
+StartTimeOfDay = Dawn
 
 # Starting weather
 # Values can be either of Clear, LightSnow, HeavySnow, Blizzard, LightFog, DenseFog, Random
-StartWeather = 
+StartWeather = Clear
 
 # Players spawns indoors
 # Values can be either of true, false
-AllowInteriorStartingSpawn = 
+AllowInteriorStartingSpawn = false
 
 # Survivor monologue
 # Values can be either of true, false
-SurvivorVoiceOver = 
+SurvivorVoiceOver = false
 
 
 
@@ -46,31 +46,31 @@ SurvivorVoiceOver =
 
 # Length of day mult
 # Values can be either of OneX, TwoX, ThreeX, FourX
-DayNightLengthMultiplier = 
+DayNightLengthMultiplier = OneX
 
 # Weather variance
 # Values can be either of Low, Medium, High, VeryHigh
-WeatherChangeFrequency = 
+WeatherChangeFrequency = Low
 
 # Blizzard freq
 # Values can be either of None, Low, Medium, High, VeryHigh
-BlizzardFrequency = 
+BlizzardFrequency = None
 
 # Worlds gets colder other time
 # Values can be either of None, Low, Medium, High
-GradualTempReductionRate = 
+GradualTempReductionRate = None
 
 # Wind variance
 # Values can be either of Low, Medium, High
-WindVariability = 
+WindVariability = Low
 
 # Aurora freq
 # Values can be either of None, Low, Medium, High
-AuroraFrequency = 
+AuroraFrequency = None
 
 # Fire overcomes air temp
 # Values can be either of true, false
-UseMinAirTempValue = 
+UseMinAirTempValue = false
 
 
 
@@ -78,71 +78,71 @@ UseMinAirTempValue =
 
 # Calorie burn rate
 # Values can be either of Low, Medium, High, VeryHigh
-CalorieBurnRate = 
+CalorieBurnRate = Low
 
 # Thirst rate
 # Values can be either of Low, Medium, High, VeryHigh
-ThirstIncrease = 
+ThirstIncrease = Low
 
 # Fatigue rate
 # Values can be either of Low, Medium, High, VeryHigh
-FatigueIncrease = 
+FatigueIncrease = Low
 
 # Freezing rate
 # Values can be either of Low, Medium, High, VeryHigh
-FreezingIncrease = 
+FreezingIncrease = Low
 
 # At rest condition rec rate
 # Values can be either of None, Low, Medium, High, VeryHigh
-ConditionRecoveryRest = 
+ConditionRecoveryRest = None
 
 # Condition rec rate
 # Values can be either of None, Low, Medium, High, VeryHigh
-ConditionRecoveryAwake = 
+ConditionRecoveryAwake = None
 
 # Hypothermia rec time
 # Values can be either of Low, Medium, High, VeryHigh
-HoursWarmthToCureHypothermia = 
+HoursWarmthToCureHypothermia = Low
 
 # Frostbite rate
 # Values can be either of None, Low, Medium, High, VeryHigh
-FrosbiteRisk = 
+FrosbiteRisk = None
 
 # Cabin fever
 # Values can be either of true, false
-CabinFeverEnabled = 
+CabinFeverEnabled = false
 
 # Parasites
 # Values can be either of true, false
-ParasitesEnabled = 
+ParasitesEnabled = false
 
 # Dysentery
 # Values can be either of true, false
-EnableDysentery = 
+EnableDysentery = false
 
 # Sprains
 # Values can be either of true, false
-EnableSprains = 
+EnableSprains = false
 
 # Food poison
 # Values can be either of true, false
-EnableFoodPoisoning = 
+EnableFoodPoisoning = false
 
 # Broken ribs
 # Values can be either of true, false
-EnableBrokenRibs = 
+EnableBrokenRibs = false
 
 # Rest as a resource
 # Values can be either of true, false
-LimitedRest = 
+LimitedRest = false
 
 # Fire prevents freezing
 # Values can be either of true, false
-AdjustFreezingDueToNearbyFire = 
+AdjustFreezingDueToNearbyFire = false
 
 # Wakes up if freezing
 # Values can be either of true, false
-InterruptIfFreezingWhileSleeping = 
+InterruptIfFreezingWhileSleeping = false
 
 
 
@@ -150,79 +150,79 @@ InterruptIfFreezingWhileSleeping =
 
 # Item decay rate
 # Values can be either of Low, Medium, High, VeryHigh
-ItemDecayRate = 
+ItemDecayRate = Low
 
 # Loose item availability
 # Values can be either of Low, Medium, High, VeryHigh
-ItemSpawnChance = 
+ItemSpawnChance = Low
 
 # Empty container chance
 # Values can be either of None, Low, Medium, High
-EmptyContainerChance = 
+EmptyContainerChance = None
 
 # Stick, branch, stone spawn freq
 # Values can be either of Low, Medium, High, VeryHigh
-StickBranchStoneSpawnFrequency = 
+StickBranchStoneSpawnFrequency = Low
 
 # Starting gear allocation
 # Values can be either of Low, Medium, High, VeryHigh
-StartingGear = 
+StartingGear = Low
 
 # Rifle availability
 # Values can be either of true, false
-RiflesInWorld = 
+RiflesInWorld = false
 
 # Harvestable plant availability
 # Values can be either of Low, Medium, High
-PlantSpawnFrequency = 
+PlantSpawnFrequency = Low
 
 # Reduce container item density
 # Values can be either of None, Low, High
-ReduceMaxItemsContainers = 
+ReduceMaxItemsContainers = None
 
 
 
 ### WILDLIFE SPAWNS
 
-# Fish
+# FishSpawnChance
 # Values can be either of None, Low, Medium, High, VeryHigh
-FishSpawnChance = 
+FishSpawnChance = None
 
-# Wolf
+# WolfSpawnChance
 # Values can be either of None, Low, Medium, High, VeryHigh
-WolfSpawnChance = 
+WolfSpawnChance = None
 
-# Deer
+# DeerSpawnChance
 # Values can be either of None, Low, Medium, High, VeryHigh
-DeerSpawnChance = 
+DeerSpawnChance = None
 
-# Rabbit
+# RabbitSpawnChance
 # Values can be either of None, Low, Medium, High, VeryHigh
-RabbitSpawnChance = 
+RabbitSpawnChance = None
 
-# Bear
+# BearSpawnChance
 # Values can be either of None, Low, Medium, High, VeryHigh
-BearSpawnChance = 
+BearSpawnChance = None
 
-# Moose
+# MooseSpawnChance
 # Values can be either of None, Low, Medium, High, VeryHigh
-MooseSpawnChance = 
+MooseSpawnChance = None
 
 # Wildlife respawn frequency
 # Values can be either of Low, Medium, High, VeryHigh
-WildlifeSpawnFrequency = 
+WildlifeSpawnFrequency = Low
 
 # Reduce wildlife pop over time
 # Values can be either of None, Low, Medium, High
-ReduceWildlifePopOverTime = 
+ReduceWildlifePopOverTime = None
 
 # Wolf spawn distance
 # Values can be either of Close, Medium, Far
-WolfSpawnDistance = 
+WolfSpawnDistance = Close
 
 # Predator grace period
 # Values can be either of true, false
-NoPredatorsFirstDay = 
+NoPredatorsFirstDay = false
 
 
 
@@ -230,27 +230,27 @@ NoPredatorsFirstDay =
 
 # Smell range
 # Values can be either of Low, Medium, High, VeryHigh
-WildlifeSmellRange = 
+WildlifeSmellRange = Low
 
 # Scent increase from meat/blood
 # Values can be either of None, Low, Medium, High
-ScentIncreaseFromMeatBlood = 
+ScentIncreaseFromMeatBlood = None
 
 # Passive wildlife
 # Values can be either of true, false
-WildlifeNotAttackUnprovoked = 
+WildlifeNotAttackUnprovoked = false
 
 # Attacks during rest
 # Values can be either of true, false
-WildlifeInterruptRest = 
+WildlifeInterruptRest = false
 
 # Wolf fear
 # Values can be either of None, Low, Medium, High
-WolfFleeChance = 
+WolfFleeChance = None
 
 # Detection range
 # Values can be either of Close, Medium, Far
-WildlifeDetectionRange = 
+WildlifeDetectionRange = Close
 
 
 
@@ -258,17 +258,19 @@ WildlifeDetectionRange =
 
 # Fighting back bonus
 # Values can be either of None, Low, Medium, High
-StrugglePlayerStrengthBonus = 
+StrugglePlayerStrengthBonus = None
 
 # Condition damage
 # Values can be either of None, Low, Medium, High
-StruggleDamageReceivedBonus = 
+StruggleDamageReceivedBonus = None
 
 # Clothing damage
 # Values can be either of None, Low, Medium, High
-StruggleClothingDamageBonus = 
+StruggleClothingDamageBonus = None
 
 # Damage severity
 # Values can be either of Low, Medium, High, VeryHigh
-StruggleDamageEventSeverity = 
+StruggleDamageEventSeverity = Low
+
+
 

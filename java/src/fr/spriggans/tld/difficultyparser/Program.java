@@ -8,7 +8,7 @@ import fr.spriggans.tld.difficultyparser.writer.FileWritter;
 
 public class Program {
 
-	private static final String FILE = "./difficulty-settings.txt";
+	private static final String FILE = "./difficulty_settings.txt";
 
 	private DifficutlyParameters diffParams;
 
