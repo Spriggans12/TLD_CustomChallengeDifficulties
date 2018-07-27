@@ -1,5 +1,7 @@
 # TLD_CustomChallengeDifficulties
 
+## What is it ?
+
 This is a mod for **The Long Dark** by Hinterland Games Studio, Inc.
 
 Ever got annoyed how easy the Challenges where ? You want to try an Interloper Nomad run ?
@@ -17,7 +19,8 @@ Have fun in the quiet apocalypse.
 Requires the [Mod Loader](https://github.com/zeobviouslyfakeacc/ModLoaderInstaller) to run.
 
 
-You can download the latest version of the mod [here](https://github.com/Spriggans12/TLD_CustomChallengeDifficulties/releases/latest) !
+You can download the latest version of the mod in the [Release](https://github.com/Spriggans12/TLD_CustomChallengeDifficulties/releases/latest) screen.
+
 *(Click on the link and download the "TLD_CustomChallengeDifficulties.zip" file)*
 
 Instructions are provided in the zip file, into a Readme.
