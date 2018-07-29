@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Harmony;
 using UnityEngine;
 using static CustomExperienceModeManager;
 
@@ -25,9 +26,9 @@ namespace CustomChallengeDifficulties {
             var leftoverEntries = dic.Select(kvp => kvp.Key + "=" + kvp.Value).ToArray();
             if (leftoverEntries.Any()) {
                 var leftoverString = string.Join(", ", leftoverEntries);
-                       Debug.LogFormat("*** MEANINGLESS LINES FOUND IN FILE : {0}", leftoverString);
+                FileLog.Log("*** MEANINGLESS LINES FOUND IN FILE : " + leftoverString);
             }
-                 Debug.LogFormat("Finished loading {0} file !", filename);
+            FileLog.Log("Finished loading " + filename + " file !");
         }
 
         private static Dictionary<string, string> loadFileToDict(string filename) {
@@ -40,7 +41,7 @@ namespace CustomChallengeDifficulties {
 
         public static void SetGlobal(Dictionary<string, string> dict, string key, Action<object> globalSetter, Type type) {
             if (!dict.TryGetValue(key, out string value)) {
-                   Debug.LogFormat("*No entry for '{0}' found. Defaulting value. Maybe you did an unintended typo in the .txt file ?", key);
+                FileLog.Log("*No entry for '" + key + "' found. Defaulting value. Maybe you did an unintended typo in the .txt file ?");
                 return;
             }
 
@@ -81,13 +82,13 @@ namespace CustomChallengeDifficulties {
                 }
 
                 if (val != null) {
-                          Debug.LogFormat("* Setting {0} to {1}", key, val.ToString());
+                    FileLog.Log("* Setting "+key+" to " + val.ToString());
                     dict.Remove(key);
                     globalSetter(val);
                 }
             } catch (Exception e) {
-                  Debug.LogFormat("*** BAD VALUE for '{0}' ('{1}'). Defaulting value. Full error below.", key, value);
-                  Debug.LogFormat(e.Message);
+                FileLog.Log("*** BAD VALUE for '"+key+"' ('"+value+"'). Defaulting value. Full error below.");
+                FileLog.Log(e.Message);
             }
         }
 
