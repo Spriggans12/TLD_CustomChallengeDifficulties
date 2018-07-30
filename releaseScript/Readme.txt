@@ -84,8 +84,7 @@ In the "customChallengesSettings" folder, you have several files.
 
 2bis/
 	If, like me, you are lazy, you probably won't want to manually go trough the difficulty_settings.txt file.
-	If, like me, you are lazy, you probably won't want to manually go trough the difficulty_settings.txt file.
-	So, you can use the stringParser utility (provided with the mod).
+	So, you can use the stringParser utility (provided with the mod) to ease the modifications.
 	I won't explain here how to use it, please go to the stringParser folder and read the "how_to_use.txt" file.
 	
 
@@ -95,7 +94,7 @@ In the "customChallengesSettings" folder, you have several files.
 
 TLD is a Unity / C# game.
 Using some C# wizardry, namely known as the Harmony library, we are able to overwrite some values in the game while it's running.
-I use that here to overwrite the ExperienceMode values of the challenges and do some magic.
+I use that here to overwrite the ExperienceMode values of the challenges, as well as other things, and do some Magic.
 
 
 *************
