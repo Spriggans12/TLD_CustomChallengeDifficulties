@@ -1,27 +1,37 @@
 :: Remove old release just in case
-rmdir /S /Q release
+if exist release rmdir /S /Q release
 
-:: C# part (dll must have been compiled from VS !)
-:: Settings files
-xcopy ..\customChallengesSettings .\release\customChallengeDifficulties\customChallengesSettings\
-:: dll
-xcopy ..\bin\Debug\TLD_CustomChallengeDifficulties.dll .\release\customChallengeDifficulties\
 
+:: C# part
+cd ../csharp/make
+call makeDLL.bat
+cd ../../releaseScript
 
 :: Java part
 cd ../java/make
 call makeJar.bat
 cd ../../releaseScript
-:: jar
+
+
+:: DLL copy
+xcopy ..\csharp\make\TLD_CustomChallengeDifficulties.dll .\release\customChallengeDifficulties\
+
+:: jar copy
 xcopy ..\java\make\ParseSettings.jar .\release\stringParser\
-:: doc
+
+:: Settings files copy
+xcopy ..\customChallengesSettings .\release\customChallengeDifficulties\customChallengesSettings\
+
+:: Java program doc copy
 xcopy ..\java\how_to_use.txt .\release\stringParser\
 
-:: Readme
+:: Readme copy
 xcopy .\Readme.txt .\release\
+
 
 :: Zip it all !
 "C:\Program Files (x86)\7-Zip\7z.exe" a -tzip TLD_CustomChallengeDifficulties.zip -r .\release\*
 
-:: Lastly, remove release
-:: rmdir /S /Q release
+
+:: Lastly, remove release if the zipping worked
+if exist TLD_CustomChallengeDifficulties.zip rmdir /S /Q release

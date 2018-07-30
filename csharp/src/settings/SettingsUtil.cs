@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using Harmony;
 using UnityEngine;
-using static CustomExperienceModeManager;
 
 /*
  * This util class handles the loading of settings files.
@@ -40,39 +39,40 @@ namespace CustomChallengeDifficulties {
         }
 
         public static void SetGlobal(Dictionary<string, string> dict, string key, Action<object> globalSetter, Type type) {
-            if (!dict.TryGetValue(key, out string value)) {
+            string value;
+            if (!dict.TryGetValue(key, out value)) {
                 FileLog.Log("*No entry for '" + key + "' found. Defaulting value. Maybe you did an unintended typo in the .txt file ?");
                 return;
             }
 
             try {
                 object val = null;
-                if (type == typeof(CustomTunableDayNightMultiplier)) {
-                    val = ParseToEnum<CustomTunableDayNightMultiplier>(value);
+                if (type == typeof(CustomExperienceModeManager.CustomTunableDayNightMultiplier)) {
+                    val = ParseToEnum<CustomExperienceModeManager.CustomTunableDayNightMultiplier>(value);
                 }
-                if (type == typeof(CustomTunableDistance)) {
-                    val = ParseToEnum<CustomTunableDistance>(value);
+                if (type == typeof(CustomExperienceModeManager.CustomTunableDistance)) {
+                    val = ParseToEnum<CustomExperienceModeManager.CustomTunableDistance>(value);
                 }
-                if (type == typeof(CustomTunableLMH)) {
-                    val = ParseToEnum<CustomTunableLMH>(value);
+                if (type == typeof(CustomExperienceModeManager.CustomTunableLMH)) {
+                    val = ParseToEnum<CustomExperienceModeManager.CustomTunableLMH>(value);
                 }
-                if (type == typeof(CustomTunableLMHV)) {
-                    val = ParseToEnum<CustomTunableLMHV>(value);
+                if (type == typeof(CustomExperienceModeManager.CustomTunableLMHV)) {
+                    val = ParseToEnum<CustomExperienceModeManager.CustomTunableLMHV>(value);
                 }
-                if (type == typeof(CustomTunableNLH)) {
-                    val = ParseToEnum<CustomTunableNLH>(value);
+                if (type == typeof(CustomExperienceModeManager.CustomTunableNLH)) {
+                    val = ParseToEnum<CustomExperienceModeManager.CustomTunableNLH>(value);
                 }
-                if (type == typeof(CustomTunableNLMH)) {
-                    val = ParseToEnum<CustomTunableNLMH>(value);
+                if (type == typeof(CustomExperienceModeManager.CustomTunableNLMH)) {
+                    val = ParseToEnum<CustomExperienceModeManager.CustomTunableNLMH>(value);
                 }
-                if (type == typeof(CustomTunableNLMHV)) {
-                    val = ParseToEnum<CustomTunableNLMHV>(value);
+                if (type == typeof(CustomExperienceModeManager.CustomTunableNLMHV)) {
+                    val = ParseToEnum<CustomExperienceModeManager.CustomTunableNLMHV>(value);
                 }
-                if (type == typeof(CustomTunableTimeOfDay)) {
-                    val = ParseToEnum<CustomTunableTimeOfDay>(value);
+                if (type == typeof(CustomExperienceModeManager.CustomTunableTimeOfDay)) {
+                    val = ParseToEnum<CustomExperienceModeManager.CustomTunableTimeOfDay>(value);
                 }
-                if (type == typeof(CustomTunableWeather)) {
-                    val = ParseToEnum<CustomTunableWeather>(value);
+                if (type == typeof(CustomExperienceModeManager.CustomTunableWeather)) {
+                    val = ParseToEnum<CustomExperienceModeManager.CustomTunableWeather>(value);
                 }
                 if (type == typeof(bool)) {
                     val = ParseTo<bool>(value);
@@ -104,7 +104,7 @@ namespace CustomChallengeDifficulties {
     public class VariableAndSetter {
         public string variableNameInFile { get; set; }
         public Action<object> setter { get; set; }
-        public Type type { get; }
+        public Type type { get; set; }
 
         public VariableAndSetter(string variableNameInFile, Action<object> setter, Type type) {
             this.variableNameInFile = variableNameInFile;
