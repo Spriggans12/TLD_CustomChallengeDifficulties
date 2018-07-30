@@ -1,35 +1,136 @@
-public static bool m_AllowInteriorStartingSpawn;
-public static bool m_SurvivorVoiceOver;
-public static bool m_WeakIce;
-public static bool m_UseMinAirTempValue;
-public static bool m_EnableDysentery;
-public static bool m_EnableSprains;
-public static bool m_EnableFoodPoisoning;
-public static bool m_EnableBrokenRibs;
-public static bool m_LimitedRest;
-public static bool m_AdjustFreezingDueToNearbyFire;
-public static bool m_InterruptIfFreezingWhileSleeping;
-public static bool m_RiflesInWorld;
-public static CustomTunableLMHV m_BaseWorldDifficulty;
-public static CustomTunableNLMH m_AuroraFrequency;
-public static CustomTunableLMHV m_StartingGear;
-public static CustomTunableNLMH m_ScentIncreaseFromMeatBlood;
-public static CustomTunableNLMH m_WolfFleeChance;
-public static CustomTunableLMHV m_StruggleDamageEventSeverity;
-public static CustomTunableLMHV m_WildlifeSpawnFrequency;
-public static bool m_WildlifeNotAttackUnprovoked;
-public static bool m_NoPredatorsFirstDay;
-public static bool m_CabinFeverEnabled;
-public static bool m_ParasitesEnabled;
-public static CustomTunableNLMHV m_FrosbiteRisk;
-public static CustomTunableNLMHV m_RabbitSpawnChance;
-public static CustomTunableNLMHV m_BearSpawnChance;
-public static CustomTunableNLMHV m_DeerSpawnChance;
-public static CustomTunableNLMHV m_WolfSpawnChance;
-public static CustomTunableTimeOfDay m_StartTimeOfDay;
-public static bool m_WildlifeInterruptRest;
-public static CustomTunableLMH m_WindVariability;
-public static CustomTunableLMH m_PlantSpawnFrequency;
-public static CustomTunableWeather m_StartWeather;
-public static CustomTunableDistance m_WildlifeDetectionRange;
-public static CustomTunableNLMHV m_MooseSpawnChance;
+	public static bool m_AllowInteriorStartingSpawn;
+		USED BY 
+		// Panel_MainMenu
+		public void OnSandboxFinal()
+		here, we loop trough starting locations...
+
+	public static bool m_SurvivorVoiceOver;
+		USED BY
+		GameManager.InCustomMode() && !GameManager.GetCustomMode().m_
+		
+	public static bool m_UseMinAirTempValue;
+		USED BY
+		GameManager.InCustomMode() && !GameManager.GetCustomMode().m_
+
+	public static bool m_EnableDysentery;
+		USED BY
+		if (GameManager.InCustomMode() && !GameManager.GetCustomMode().m_EnableDysentery) @ Disentery
+	public static bool m_EnableSprains;
+		USED BY
+		if (GameManager.InCustomMode() && !GameManager.GetCustomMode().m_EnableSprains) @ SprainedAnkle/Wrist
+	public static bool m_EnableFoodPoisoning;
+		SAME AS DISENTRY
+	public static bool m_EnableBrokenRibs;
+		SAME AS DISENTRY
+	public static bool m_CabinFeverEnabled;
+		SAME AS DISENTRY (but used twice)
+	public static bool m_ParasitesEnabled;
+		USED BY
+		if (GameManager.GetCustomMode().m_ParasitesEnabled) { return this.m_NumDosesRequiredStalker; } @ IntestinalParasites
+
+	public static bool m_LimitedRest;
+		USED BY
+		GameManager.InCustomMode() && !GameManager.GetCustomMode().m_
+
+	public static bool m_AdjustFreezingDueToNearbyFire;
+		USED BY
+		GameManager.InCustomMode() && !GameManager.GetCustomMode().m_
+		
+	public static bool m_InterruptIfFreezingWhileSleeping;
+		USED BY
+		GameManager.InCustomMode() && !GameManager.GetCustomMode().m_
+
+	public static bool m_RiflesInWorld;
+		USED BY
+		GameManager.InCustomMode() && !GameManager.GetCustomMode().m_
+
+	public static CustomTunableLMHV m_BaseWorldDifficulty;
+		USED BY
+		this.GetCustomMode().m_
+		USED AT TWO PLACES
+
+	public static CustomTunableNLMH m_AuroraFrequency;
+		USED BY
+		this.GetCustomMode().m_
+
+
+	public static CustomTunableLMHV m_StartingGear;
+		SET BY
+		// StartGear
+		public void AddAllToInventory()
+		ALLOWS some challenges specifics
+		AND USED BY
+		this.GetCustomMode().m_
+
+	public static CustomTunableNLMH m_ScentIncreaseFromMeatBlood;
+		USED BY
+		this.GetCustomMode().m_
+		
+		
+	public static CustomTunableNLMH m_WolfFleeChance;
+		USED BY
+		this.GetCustomMode().m_
+		
+	public static CustomTunableLMHV m_StruggleDamageEventSeverity;
+		USED BY
+		GameManager.GetCustomMode().m_
+
+	public static CustomTunableLMHV m_WildlifeSpawnFrequency;
+		USED BY
+		GameManager.GetCustomMode().m_
+
+	public static bool m_WildlifeNotAttackUnprovoked;
+		USED BY
+		inCustomMode() && GameManager.GetCustomMode().m_
+
+	public static bool m_NoPredatorsFirstDay;
+		USED BY
+		GameManager.GetCustomMode().m_
+		USES SOME CHALLENGES SPECIFICS
+
+	public static CustomTunableNLMHV m_FrosbiteRisk;
+		USED BY
+		GameManager.InCustomMode() && !GameManager.GetCustomMode().m_
+		USED TWO PLACES
+
+	public static CustomTunableTimeOfDay m_StartTimeOfDay;
+	public static CustomTunableWeather m_StartWeather;
+		USED BY
+		GameManager.GetCustomMode().m_
+
+	public static bool m_WildlifeInterruptRest;
+		USED BY
+		GameManager.InCustomMode() && !GameManager.GetCustomMode().m_
+		
+		
+	public static CustomTunableLMH m_WindVariability;
+		USED BY
+		this.GetCustomMode().m
+
+	public static CustomTunableLMH m_PlantSpawnFrequency;
+		USED BY
+		this.GetCustomMode().m
+
+	public static CustomTunableDistance m_WildlifeDetectionRange;
+		USED BY
+		this.GetCustomMode().m
+
+	public static CustomTunableNLMHV m_RabbitSpawnChance;
+		USED BY
+		this.GetCustomMode().m
+
+		public static CustomTunableNLMHV m_BearSpawnChance;
+		USED BY
+		this.GetCustomMode().m
+
+		public static CustomTunableNLMHV m_DeerSpawnChance;
+		USED BY
+		this.GetCustomMode().m
+
+	public static CustomTunableNLMHV m_WolfSpawnChance;
+		USED BY
+		this.GetCustomMode().m
+
+	public static CustomTunableNLMHV m_MooseSpawnChance;
+		USED BY
+		this.GetCustomMode().m
